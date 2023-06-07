@@ -1,5 +1,9 @@
 // const reactDom = require("react-dom");
 
+import react from "react";
+
+import ReactDOM from "react-dom";
+
 const div = document.getElementById('root');
 function Navbar()
 {
@@ -49,6 +53,14 @@ function Navbar()
 
 // Afterward, render it below the Navbar (which
 // you can do inside the ReactDOM.render call below)
+function Div()
+{
+    return (
+        <div id="test" ></div>
+        )
+
+}
+
 function MainContent()
 {
     return (
@@ -59,11 +71,16 @@ function MainContent()
     );
 } 
 
-ReactDOM.render(<div>
-            <Navbar />
-            <section>
-                <MainContent />
-                <MainContent />
-                <MainContent />
-            </section>
-           </div>, div);
+const navbar = (   
+    <nav>
+        <h1>bobs's bostro </h1>
+        <ul>
+            <li>Menu</li>
+            <li>About</li>
+            <li>Contact</li>
+        </ul>
+    </nav>
+)
+
+
+ReactDOM.render(navbar, div);
