@@ -1,7 +1,10 @@
 body, html {
     height: 100%;
-    margin:0;
-    font-family: 'Montserrat';
+    /* margin:0; */
+    font-family: "PT Sans", Calibri, Tahoma, sans-serif;
+
+    /* font-family: 'Montserrat'; */
+    /* align-items: center; */
 }
 h1
 {
@@ -16,20 +19,33 @@ h1
     flex-direction: column;
     align-items: center;
     justify-self: flex-start; 
-    gap:1rem;
+    gap: 1rem;
+    /* top: 50%; */
     width: auto;
-    height: 10rem;
-    padding: 4rem;
-    top: 100%;
-    /* margin: 2rem; */
+    height: 20rem;
+    color: black;
+    margin: 1rem 8rem; 
     border-radius: 1rem;
-    text-align: center;
 }
 
-input{
-    height: 40px;
+input
+{
+    height: 38px;
     border: 1rem ;
-    width: 10rem;
-    border-radius: 1rem ;
+    width: 13rem;
+    padding:0 10px;
+    color :#c2c2c2;
+    text-align:start;
+    border-radius: 0.5rem ;
     background: rgb(243, 243, 243);
+}
+button
+{
+    width:20rem;
+    height: 45px;
+    border: 1rem;
+    border-radius: 0.5rem  ;
+    background:#E46E6E;
+    color:white;
+    margin: 1rem;
 }

@@ -9,7 +9,8 @@ const root = document.getElementById('root');
 const MainInputStyle = {
   display:'flex',
   flexDirection:'row',
-  gap:'1rem',
+  gap : '1rem',
+  padding: '.5rem ',
 }
 
 const MainContentStyle = {
@@ -21,8 +22,6 @@ const MainContentStyle = {
   marginBottom: '3rem',
   justifyContent: 'space-between',
   gap:'.5rem',
-  marign: '0',
-  // padding:'0'
 
 }
 
@@ -31,9 +30,9 @@ const MainContent = (
   <h1>Subscribe</h1>
       <p>Sign up with your email address to recieve news and update</p>
       <div className='Inputs' style={MainInputStyle}>
-        <input type="name" />
-        <input type="name"  />
-        <input type="email" />
+        <input type="name" value="First name" lvalue=""/>
+        <input type="name"  value="last name"/>
+        <input type="email" value="Email"/>
       </div>
       <button>Subscribe</button>
   </div>
