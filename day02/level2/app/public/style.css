@@ -1,10 +1,7 @@
 body, html {
     height: 100%;
-    /* margin:0; */
     font-family: "PT Sans", Calibri, Tahoma, sans-serif;
 
-    /* font-family: 'Montserrat'; */
-    /* align-items: center; */
 }
 h1
 {
@@ -39,6 +36,7 @@ input
     border-radius: 0.5rem ;
     background: rgb(243, 243, 243);
 }
+
 button
 {
     width:20rem;
@@ -49,3 +47,41 @@ button
     color:white;
     margin: 1rem;
 }
+
+
+.Inputs
+{
+    display: flex;
+    flex-direction: row;
+    gap : 1rem;
+    padding: .5rem;  
+}
+
+
+@media(max-width:600px)
+{
+    .Inputs{
+        flex-direction: column;  
+    }
+    #root{
+        height: 30rem;
+    }
+    input{
+        width:20rem;
+    }
+
+}
+
+@media (max-width:975px)
+{
+    button{ width: 10rem;
+    }
+    input{
+        width:7rem;
+    }
+}
+
+/* @media (max-width: 350px)
+{
+} */
+
