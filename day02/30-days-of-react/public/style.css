@@ -37,42 +37,46 @@ main {
     padding: 3rem 4rem;
     margin:auto;
 }
-h1{
+/* h1{
     font-size: 70px;
     font-weight: 300;
-}
+} */
 h2,h3
 {
     font-weight: 300;
 }
 
-img {
+img 
+{
     border-radius: 100%;
+    min-width:20%;
     margin: 1rem;
-    padding-left: 5rem;
+    padding-left: 2rem;
     width: 400px;
     height: auto;
 }
-
 
 .root-child
 {
  display: flex; 
  flex-direction: column   
 }
-.root-images{
+
+.root-images
+{
     display:flex;
+    flex-direction: row;    
+    min-width: 90%;
     padding: 5rem;
     align-items: center;
     justify-content: center;
-    flex: flex-shrink;
-    flex-direction: row;    
+    /* flex: flex-shrink; */
 }
 
-h1
+/* h1
 {
     flex: 1;
     font-size:30px;
     font-weight: 500;
     padding-left: 25rem;
-}
+} */

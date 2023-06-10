@@ -4,6 +4,7 @@ import zrabhiImage from './images/zrabhi.jpg'
 import ReactLogo from './images/react_logo.png'
 import HtmlLogo from './images/html_logo.png'
 import CssLogo from './images/css_logo.png'
+
 const HeaderStyle = {
   alignItems: "center",
   backgroundColor: "#61DBFB",
@@ -30,7 +31,11 @@ const mainStyle = {
 };
 
 const techs = ['Html, Css, JavaScript'];
-const techFormated = techs.map((tech) => <li key={tech.toString}>{tech}</li>);
+const techFormated = techs.map((tech) => 
+      <li 
+        key={tech.toString}>{tech}
+        </li>);
+
 const main = (
   <main style={mainStyle}>
     <p>
@@ -53,17 +58,24 @@ const app = (
     {main}
     {user}
   </div>
-);
+); 
+
 // const rootElement = document.getElementById('root');
 
+const h1Style = {
+  flex: '1',
+  fontSize: '30px',
+  fontWeight: '500',
+  textAlign:'center', 
+}
 
 const logos = (
     <div className='root-child'>
-        <h1>Front End Technologies</h1>
+        <h1 style={h1Style}>Front End Technologies</h1>
         <div className='root-images'>
-          <img src={ReactLogo} atl="react logo" />
-          <img src={HtmlLogo} atl="react logo" />
-          <img src={CssLogo} atl="react logo" />
+          <img src= {ReactLogo} atl="react logo" />
+          <img src= {HtmlLogo} atl="react logo" />
+          <img src= {CssLogo} atl="react logo" />
         </div>
     </div>
 )
