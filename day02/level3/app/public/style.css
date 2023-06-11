@@ -18,25 +18,36 @@ body,html
 .MainImage
 {
     width: 10rem;
+    padding: 1rem;
     border-radius: 15rem;
 }
 
 .Icon
 {
     width: 1rem;
-    padding: .1rem;
+    padding-left: .1rem;
     padding-right:0;
     margin: .6rem;
     height: 1rem;
 }
 
+.timeIcon
+{
+    width: .9rem;
+    height: 1rem;
+    padding-left:.9rem;
+    padding-top: .7rem;
+}
+
 .MainInfo
 {
     display: flex;
+    padding-left: 1.2rem;
     flex-direction:row;
     /* gap: .rem; */
 }
-.Image
+
+.Card
 {
     display: flex;
     flex-direction: column;
@@ -48,4 +59,41 @@ h1
     font-size: 16px;
     font-weight: 800;
     padding-left: 1rem;
+}
+h2
+{
+    font-size: 13px;
+    font-weight: 500;
+    padding-left: 2rem;
+}
+h3{
+    font-size:15px;
+    font-weight: 600;  
+    padding-left: 2rem;
+}
+
+.Skills
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap:1rem;
+}
+.Date
+{
+    display: flex;
+    flex-direction: row;
+
+}
+
+li
+{
+    list-style-type: none;
+    color:white;
+    padding:.9rem 1rem;
+    width:auto;
+    height: 10px;
+    border-radius: .7rem;
+    background: #01e188;
+    
 }
