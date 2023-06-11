@@ -1,0 +1,52 @@
+body,html
+{
+    /* height: 100%; */
+    align-items: center;
+    margin:0;
+    font-family: "PT Sans", Calibri, Tahoma, sans-serif;
+}
+
+#root
+{
+    background: rgb(248, 248, 248);
+    width: auto;
+    height: auto;
+    left:50%;
+    margin: 1rem 4rem;
+    border-radius: 1rem;
+}
+
+.MainImage
+{
+    width: 10rem;
+    border-radius: 15rem;
+}
+
+.Icon
+{
+    width: 1rem;
+    padding: .1rem;
+    padding-right:0;
+    margin: .6rem;
+    height: 1rem;
+}
+
+.MainInfo
+{
+    display: flex;
+    flex-direction:row;
+    /* gap: .rem; */
+}
+.Image
+{
+    display: flex;
+    flex-direction: column;
+    gap: .2rem;
+}
+
+h1
+{
+    font-size: 16px;
+    font-weight: 800;
+    padding-left: 1rem;
+}
