@@ -35,7 +35,7 @@ body,html
 {
     width: .9rem;
     height: 1rem;
-    padding-left:.9rem;
+    padding-left:1rem;
     padding-top: .7rem;
 }
 
@@ -60,13 +60,16 @@ h1
     font-weight: 800;
     padding-left: 1rem;
 }
+
 h2
 {
     font-size: 13px;
     font-weight: 500;
     padding-left: 2rem;
 }
-h3{
+
+h3
+{
     font-size:15px;
     font-weight: 600;  
     padding-left: 2rem;
@@ -79,21 +82,29 @@ h3{
     flex-wrap: wrap;
     gap:1rem;
 }
+
 .Date
 {
     display: flex;
     flex-direction: row;
+    gap: .5rem;
 
 }
-
+.Joined
+{
+    font-size:14px;
+    font-weight: 500;
+    padding:.2rem;
+    padding-bottom: 2rem;
+}
 li
 {
     list-style-type: none;
     color:white;
     padding:.9rem 1rem;
+    padding-bottom: 1.2rem;
     width:auto;
     height: 10px;
     border-radius: .7rem;
-    background: #01e188;
-    
+    background: #01e188;    
 }

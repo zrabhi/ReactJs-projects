@@ -39,14 +39,14 @@ function SkillsList() {
   );
 }
 
-const TimeNow = 'June 11, 2023'
+const TimeNow = "June 11, 2023";
 console.log(TimeNow);
 function DateNow() {
   return (
     <div className="Date">
       <img className="timeIcon" src={timeIcon} alt="time joined" />
-     <h1>Joined on {' '} {TimeNow}</h1>
-     </div>
+      <h1 className="Joined">Joined on {TimeNow}</h1>
+    </div>
   );
 }
 
@@ -57,7 +57,6 @@ const Card = (
       <h1>ZAKARIA RABHI</h1>
       <img className="Icon" src={verIcon} alt="verified" />
     </div>
-    
     <h2>Senior Devloper, Morroco</h2>
     <h3>SKILLS</h3>
     <SkillsList />
