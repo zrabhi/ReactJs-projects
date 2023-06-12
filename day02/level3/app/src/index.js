@@ -6,41 +6,17 @@ import timeIcon from "./images/clock.png";
 
 const Root = document.getElementById("root");
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-function SkillsList() {
-  return (
-    <ul className="Skills">
-      <li>HTML</li>
-      <li>CSS</li>
-      <li>Sass</li>
-      <li>JS</li>
-      <li>React</li>
-      <li>Redux</li>
-      <li>Node</li>
-      <li>MongoDB</li>
-      <li>Python</li>
-      <li>Flask</li>
-      <li>Django</li>
-      <li>NumPy</li>
-      <li>Pandas</li>
-      <li>Data Analysis</li>
-      <li>MYSQL</li>
-      <li>GraphQL</li>
-      <li>D3.js</li>
-      <li>Gatsby</li>
-      <li>Docker</li>
-      <li>Heroku</li>
-      <li>Git</li>
-      <li>C++/C</li>
-      <li>Typescript</li>
-    </ul>
-  );
-}
+function SkillsList()
+{
+    const techs = ['HTML', 'CSS', 'Sass', 'JS', 'React', 'Redux', 'Node', 'MongoDB', 'Pyhton',
+                   'Flask','Django','NumPy', 'Pandas', 'Data analysis', 'MYSQL', 'GraphQL','D3.js','Gatsby',
+                    'Docker','Heroku', 'Git','C/C++','TypeScript', 'Express', 'Nest' ];
+    const techsFormatted = techs.map((tech) => <li key={tech}>{tech}</li>)
+    return techsFormatted;
+} 
 
 const TimeNow = "June 11, 2023";
-console.log(TimeNow);
+
 function DateNow() {
   return (
     <div className="Date">
@@ -59,7 +35,9 @@ const Card = (
     </div>
     <h2>Senior Devloper, Morroco</h2>
     <h3>SKILLS</h3>
-    <SkillsList />
+    <ul className="Skills">
+        <SkillsList />
+    </ul> 
     <DateNow />
   </div>
 );
