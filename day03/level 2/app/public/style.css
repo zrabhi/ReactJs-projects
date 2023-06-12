@@ -1,0 +1,65 @@
+body,html
+{
+    align-items: center;
+    margin:0;
+    font-family: "PT Sans", Calibri, Tahoma, sans-serif;
+}
+
+#root
+{
+    background: rgb(248, 248, 248);
+    width: auto;
+    height: auto;
+    left:50%;
+    margin: 1rem 4rem;
+    border-radius: 1rem;
+}
+
+h1
+{
+    font-size: 16px;
+    font-weight: 800;
+    padding-left: 1rem;
+}
+
+h2
+{
+    font-size: 13px;
+    font-weight: 500;
+    padding-left: 2rem;
+}
+
+h3
+{
+    font-size:15px;
+    font-weight: 600;  
+    padding-left: 2rem;
+}
+
+
+
+.Date
+{
+    display: flex;
+    flex-direction: row;
+    gap: .5rem;
+
+}
+.Joined
+{
+    font-size:14px;
+    font-weight: 500;
+    padding:.2rem;
+    padding-bottom: 2rem;
+}
+li
+{
+    list-style-type: none;
+    color:white;
+    padding:.9rem 1rem;
+    padding-bottom: 1.2rem;
+    width:auto;
+    height: 10px;
+    border-radius: .7rem;
+    background: #01e188;    
+}
