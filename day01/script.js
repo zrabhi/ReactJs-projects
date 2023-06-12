@@ -3,7 +3,7 @@
 const div = document.getElementById("root");
 
 function MainDiv() {
-  return (<div id="test"></div>);
+  return <div id="test"></div>;
 }
 
 function MainContent() {
@@ -15,28 +15,26 @@ function MainContent() {
   );
 }
 
-const NavbarSTYLE =
-{
-  diplay: 'flex',
+const NavbarSTYLE = {
+  diplay: "flex",
   // flexDirection: 'row',
-  alignItems: 'center',
-  jusitifyContent: 'center',
-  background: '#61DBFB',
-  fontSize: '1.5rem',
+  alignItems: "center",
+  jusitifyContent: "center",
+  background: "#61DBFB",
+  fontSize: "1.5rem",
 };
 
-const liStyle =
-{
-  flex: '1',
-  flexDirection: 'row',
-}
+const liStyle = {
+  flex: "1",
+  flexDirection: "row",
+};
 
 const HeaderStyle = {
-  alignItems: 'center',
-  backgroundColor: '#61DBFB',
-  color: 'black',
-  width:'100%',
-}
+  alignItems: "center",
+  backgroundColor: "#61DBFB",
+  color: "black",
+  width: "100%",
+};
 //jsx header element
 
 const header = (
@@ -49,33 +47,28 @@ const header = (
       <smal>June 9, 2023</smal>
     </div>
   </header>
-)
+);
 
 const mainStyle = {
-  backgroundColor: '#F3F0F5',
-  width:'100%',
-}
+  backgroundColor: "#F3F0F5",
+  width: "100%",
+};
 
+const techs = ['Html, Css, JavaScript'];
+const techFormated = techs.map((tech) => <li key={tech.toString}>{tech}</li>);
 const main = (
-
   <main style={mainStyle}>
-      <p>Prerequisite to get started {' '} 
-        <strong>
-            reactJs
-        </strong> 
-      </p>
-      <ul>
-        <li>Html</li>
-        <li>Css</li>
-        <li>JavaScript</li>
-      </ul>
+    <p>
+      Prerequisite to get started <strong>reactJs</strong>
+    </p>
+    <ul>{techFormated}</ul>
   </main>
-)
+);
 
 const app = (
   <div className="app">
     {header}
     {main}
   </div>
-)
+);
 ReactDOM.render(app, div);

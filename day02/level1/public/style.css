@@ -51,7 +51,7 @@ img
     border-radius: 100%;
     margin: 1rem;
     padding-left: 2rem;
-    width: 400px;
+    width:300px;
     height: auto;
 }
 
@@ -74,11 +74,13 @@ img
 }
 
 @media (max-width: 800px) {
-    .root-images {
+    .root-images
+    {
       flex-direction: column;
         /* width:50%;  */
     }
-    .img{
+    .img
+    {
         width:100px;
     }
 }
