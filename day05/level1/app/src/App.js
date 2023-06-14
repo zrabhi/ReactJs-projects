@@ -53,7 +53,6 @@ const Numbers = ({ Numbers }) => {
         </li>
       );
   });
-  console.log("list id ", list);
   return <ul className="Numbers">{list}</ul>;
 };
 
