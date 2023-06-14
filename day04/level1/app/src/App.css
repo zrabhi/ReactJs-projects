@@ -1,38 +1,103 @@
-.App {
-  text-align: center;
+#root
+{
+    background: rgb(248, 248, 248);
+    width: auto;
+    height: auto;
+    left:50%;
+    margin: 1rem 4rem;
+    border-radius: 1rem;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.MainImage
+{
+    width: 10rem;
+    padding: 1rem;
+    border-radius: 15rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.Icon
+{
+    width: 1rem;
+    padding-left: .1rem;
+    padding-right:0;
+    margin: .6rem;
+    height: 1rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.timeIcon
+{
+    width: .9rem;
+    height: 1rem;
+    padding-left:1rem;
+    padding-top: .7rem;
 }
 
-.App-link {
-  color: #61dafb;
+.MainInfo
+{
+    display: flex;
+    padding-left: 1.2rem;
+    flex-direction:row;
+    /* gap: .rem; */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Card
+{
+    display: flex;
+    flex-direction: column;
+    gap: .2rem;
+}
+
+h1
+{
+    font-size: 16px;
+    font-weight: 800;
+    padding-left: 1rem;
+}
+
+h2
+{
+    font-size: 13px;
+    font-weight: 500;
+    padding-left: 2rem;
+}
+
+h3
+{
+    font-size:15px;
+    font-weight: 600;  
+    padding-left: 2rem;
+}
+
+.Skills
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap:1rem;
+}
+
+.Date
+{
+    display: flex;
+    flex-direction: row;
+    gap: .5rem;
+
+}
+.Joined
+{
+    font-size:14px;
+    font-weight: 500;
+    padding:.2rem;
+    padding-bottom: 2rem;
+}
+li
+{
+    list-style-type: none;
+    color:white;
+    padding:.9rem 1rem;
+    padding-bottom: 1.2rem;
+    width:auto;
+    height: 10px;
+    border-radius: .7rem;
+    background: #01e188;    
 }
