@@ -36,9 +36,10 @@ function SkillsList() {
   return techsFormatted;
 }
 
-const TimeNow = "June 11, 2023";
+// const TimeNow = "June 11, 2023";
 
-function DateNow() {
+function DateNow(props) {
+  const {TimeNow} = props.data;
   return (
     <div className="Date">
       <img className="timeIcon" src={timeIcon} alt="time joined" />
@@ -49,6 +50,9 @@ function DateNow() {
 
 const App = (props) =>
 {
+  const data = {
+    TimeNow:'June 11, 2023',
+  }
   const {firstName, lastName, Job, Country} = props.data.author;
   return (
   <div className="App">
@@ -62,7 +66,7 @@ const App = (props) =>
     <ul className="Skills">
       <SkillsList />
     </ul>
-    <DateNow />
+    <DateNow data={data}/>
   </div>);
 }
 
