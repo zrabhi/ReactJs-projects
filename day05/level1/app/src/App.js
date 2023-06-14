@@ -3,13 +3,13 @@ import "./App.css";
 function randomNumberInRange(max, min) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
-const Test = [
-  0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21,
-  22, 23, 24, 25, 26, 27, 28, 29, 30, 31,
-];
+// for debbuging
+// const Test = [
+//   0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21,
+//   22, 23, 24, 25, 26, 27, 28, 29, 30, 31,
+// ];
 
 const isPrime = (number) => {
-  let flag = false;
   for (let i = 2; i < number / 2; i++) {
     if (number % i === 0) {
       return false;
@@ -60,7 +60,7 @@ const Numbers = ({ Numbers }) => {
 function randomNumberGenerator() {
   const numbers = [];
   for (let i = 0; i < 32; i++) {
-    let randomNumber = numbers.push(randomNumberInRange(100, 1));
+    numbers.push(randomNumberInRange(100, 1));
   }
   return numbers;
 }
