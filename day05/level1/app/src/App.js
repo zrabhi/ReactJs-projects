@@ -64,7 +64,8 @@ function randomNumberGenerator() {
   return numbers;
 }
 
-function App() {
+function App()
+{
   return (
     <main>
       <div className="MainWrapper">
