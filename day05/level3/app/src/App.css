@@ -1,0 +1,40 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border : 10px solid black;
+  padding: 2px 350px;
+}
+
+.Countries {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width:100%;
+  justify-content: space-between;
+}
+h3
+{
+  font-size: 16px;
+  font-weight: 600;
+  max-width:53px;
+}
+.USA{
+  /* margin-left: 20px; */
+}
+.Countries div:only-child 
+{
+  height: 40px;
+  background: rgb(241, 169, 0);
+  border-radius: 3px;
+  width: 0%;
+}
+
+.Wrapper {
+  width:700px;
+  display: flex;
+  justify-content: start;
+  min-width: 700px;
+  
+}
