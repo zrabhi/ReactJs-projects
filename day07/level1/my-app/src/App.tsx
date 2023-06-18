@@ -15,11 +15,20 @@ type data = {
   date: string;
 };
 
-type mainContentProp = {
-  data: data;
+type ButtonProps = 
+{
+  text: string;
+  onClick: () => void;
+};
+
+type MainContentProp = {
+
 }
 
-class MainContent extends Component<mainContentProp> {
+type HeaderContentProp = {
+  data: data;
+}
+class HeaderContent extends Component<HeaderContentProp> {
  
   render() 
     {
@@ -38,6 +47,28 @@ class MainContent extends Component<mainContentProp> {
       );
     }
   }
+
+class techList extends Component {
+  render()
+  {
+    const techs: string[] = ['Html', 'Css', 'JavaScript'];
+    const techsFormatted = techs.map((tech) => <li key={tech}>{tech}</li>) 
+    return (techsFormatted);
+  }
+}
+class MainContent extends Component<MainContentProp>
+{
+  buttonStyles = {
+    backgroundColor: '#61dbfb',
+    padding: 10,
+    border: 'none',
+    borderRadius: 5,
+    margin: 3,
+    cursor: 'pointer',
+    fontSize: 18,
+    color: 'white',
+};
+}
 
 export class App extends Component {
   state = {
@@ -79,8 +110,8 @@ export class App extends Component {
       Title: "Getting Started React",
       Subtitle: "JavaScript Library",
       author: {
-        FirstName: "Asabeneh",
-        LastName: "Yetayeh",
+        FirstName: "Zac",
+        LastName: "Rabhi",
       },
       date: "Oct 7, 2020",
     };
@@ -89,7 +120,7 @@ export class App extends Component {
     return (
       <div className="header-wrapper">
         {this.state.styles.backgroundColor}
-        <MainContent data={UserData} />
+        <HeaderContent data={UserData} />
       </div>
     );
   }
