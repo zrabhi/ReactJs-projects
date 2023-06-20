@@ -23,7 +23,6 @@ type ButtonProps = {
   style: React.CSSProperties;
 };
 
-type MainContentProp = {};
 
 type HeaderContentProp = {
   data: data;
@@ -41,11 +40,6 @@ type FooterProps = {
   color: string;
 };
 
-type CountProps = {
-  count: number;
-  addOne: () => void;
-  minusOne: () => void;
-};
 
 const buttonStyles: React.CSSProperties = {
   backgroundColor: "#61dbfb",
@@ -62,7 +56,6 @@ class HeaderContent extends Component<HeaderContentProp> {
   render() {
     const { Welcome, Title, Subtitle } = this.props.data;
     const { FirstName, LastName } = this.props.data.author;
-    console.log(this.props.data.BackGround);
 
     return (
       <div
@@ -124,9 +117,6 @@ const Footer: React.FC<FooterProps> = ({ date, background, color }) => {
     </footer>
   );
 };
-
-class MainContent extends Component<MainContentProp> {}
-
 export class App extends Component {
   state = {
     backgroundColor: "#61dbfb",
@@ -171,7 +161,6 @@ export class App extends Component {
     let UserCardBack =
       CurrentBackColor === WhiteBackGround ? "white" : "#18122B";
     this.setState({ backgroundColor: CurrentBackColor });
-    console.log("back coloor:  ", this.state.backgroundColor);
     this.setState({ color: CurrentColor });
     this.setState({ userCardBckGround: UserCardBack });
   };
@@ -189,7 +178,6 @@ export class App extends Component {
       color: this.state.color,
     };
 
-    const userImage = { image: zrabhiImage };
     return (
       <div className="App" style={{ background: this.state.userCardBckGround }}>
         <HeaderContent data={UserData} />
