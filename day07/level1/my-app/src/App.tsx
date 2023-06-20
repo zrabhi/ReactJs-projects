@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./App.css";
 import zrabhiImage from "./images/zrabhi.jpg";
 
-// Fuction to show month date year
+// Fucntion to show month date year
 
 type data = {
   Welcome: string;
@@ -37,6 +37,8 @@ type userProps = {
 
 type FooterProps = {
   date: string;
+  background: string;
+  color: string;
 };
 
 type CountProps = {
@@ -61,7 +63,6 @@ class HeaderContent extends Component<HeaderContentProp> {
     const { Welcome, Title, Subtitle } = this.props.data;
     const { FirstName, LastName } = this.props.data.author;
     console.log(this.props.data.BackGround);
-    
 
     return (
       <div
@@ -111,11 +112,14 @@ const UserCard: React.FC<userProps> = ({ FirstName, LastName, Image }) => {
   );
 };
 
-const Footer: React.FC<FooterProps> = ({ date }) => {
+const Footer: React.FC<FooterProps> = ({ date, background, color }) => {
   return (
     <footer>
-      <div className="footerWrapper">
-        <p>Copyrigh {date}</p>
+      <div
+        style={{ background: background, color: color }}
+        className="footerWrapper"
+      >
+        <p>Copyright {date}</p>
       </div>
     </footer>
   );
@@ -126,7 +130,8 @@ class MainContent extends Component<MainContentProp> {}
 export class App extends Component {
   state = {
     backgroundColor: "#61dbfb",
-    color: "white",
+    userCardBckGround: "",
+    color: "black",
   };
 
   showDate = (time: Date): string => {
@@ -146,7 +151,7 @@ export class App extends Component {
     const month: string = months[time.getMonth()].slice(0, 3);
     const year = time.getFullYear();
     const date = time.getDate();
-    return `${month} ${date},  ${year};`;
+    return `${month} ${date},  ${year}`;
   };
   handleTime = () => {
     alert(this.showDate(new Date()));
@@ -154,22 +159,21 @@ export class App extends Component {
   greetPeople = () => {
     alert("Welcome to 30 days of react, 2023");
   };
-  changeBackground = () => 
-  {
+  changeBackground = () => {
     let WhiteBackGround = "#61dbfb";
-    let BlackBackGround = "#0E2954";
+    let BlackBackGround = "#18122B";
     let CurrentBackColor =
       this.state.backgroundColor === WhiteBackGround
         ? BlackBackGround
         : WhiteBackGround;
-        
-        let CurrentColor =
-      CurrentBackColor === WhiteBackGround
-      ? "black"
-      : "white"; 
-      this.setState({ backgroundColor: CurrentBackColor });
-      console.log("back coloor:  ", this.state.backgroundColor );
-      this.setState({color: CurrentColor});
+
+    let CurrentColor = CurrentBackColor === WhiteBackGround ? "black" : "white";
+    let UserCardBack =
+      CurrentBackColor === WhiteBackGround ? "white" : "#18122B";
+    this.setState({ backgroundColor: CurrentBackColor });
+    console.log("back coloor:  ", this.state.backgroundColor);
+    this.setState({ color: CurrentColor });
+    this.setState({ userCardBckGround: UserCardBack });
   };
   render() {
     const UserData: data = {
@@ -187,14 +191,20 @@ export class App extends Component {
 
     const userImage = { image: zrabhiImage };
     return (
-      <div className="App" >
+      <div className="App">
         <HeaderContent data={UserData} />
-        <div className="Card">
+        <div
+          className="Card"
+          style={{ background: this.state.userCardBckGround }}
+        >
           <p>Prerequisite to get started react.js</p>
           <TechList />
           <UserCard FirstName="Zakaria" LastName="Rabhi" Image={zrabhiImage} />
         </div>
-        <div className="Buttons">
+        <div
+          className="Buttons"
+          style={{ background: this.state.userCardBckGround }}
+        >
           <Button
             text="Greet People"
             style={buttonStyles}
@@ -211,7 +221,11 @@ export class App extends Component {
             onClick={this.changeBackground}
           />
         </div>
-        <Footer date={this.showDate(new Date())} />
+        <Footer
+          date={this.showDate(new Date())}
+          background={this.state.backgroundColor}
+          color={this.state.color}
+        />
       </div>
     );
   }
