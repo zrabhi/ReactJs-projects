@@ -195,7 +195,7 @@ export class App extends Component {
         <HeaderContent data={UserData} />
         <div
           className="Card"
-          style={{ background: this.state.userCardBckGround }}
+          style={{ background: this.state.userCardBckGround, color:this.state.color  }}
         >
           <p>Prerequisite to get started react.js</p>
           <TechList />
