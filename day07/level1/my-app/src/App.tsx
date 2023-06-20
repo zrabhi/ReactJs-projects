@@ -191,7 +191,7 @@ export class App extends Component {
 
     const userImage = { image: zrabhiImage };
     return (
-      <div className="App">
+      <div className="App" style={{ background: this.state.userCardBckGround }}>
         <HeaderContent data={UserData} />
         <div
           className="Card"
