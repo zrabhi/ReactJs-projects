@@ -13,6 +13,8 @@ type data = {
     LastName: string;
   };
   date: string;
+  BackGround: string;
+  color: string;
 };
 
 type ButtonProps = {
@@ -58,25 +60,34 @@ class HeaderContent extends Component<HeaderContentProp> {
   render() {
     const { Welcome, Title, Subtitle } = this.props.data;
     const { FirstName, LastName } = this.props.data.author;
+    console.log(this.props.data.BackGround);
+    
 
     return (
-      <div className="MainContetent">
+      <div
+        style={{
+          background: this.props.data.BackGround,
+          color: this.props.data.color,
+        }}
+        className="MainContent"
+      >
         <h1>{Welcome}</h1>
         <h2>{Title}</h2>
         <h3>{Subtitle}</h3>
         <p>
           {FirstName} {LastName}
         </p>
+        <small>{this.props.data.date}</small>
       </div>
     );
   }
 }
 
-class techList extends Component {
+class TechList extends Component {
   render() {
     const techs: string[] = ["Html", "Css", "JavaScript"];
     const techsFormatted = techs.map((tech) => <li key={tech}>{tech}</li>);
-    return techsFormatted;
+    return <ul className="Techs">{techsFormatted}</ul>;
   }
 }
 
@@ -103,8 +114,9 @@ const UserCard: React.FC<userProps> = ({ FirstName, LastName, Image }) => {
 const Footer: React.FC<FooterProps> = ({ date }) => {
   return (
     <footer>
-      <div className="footer-wrapper"></div>
-      <p>Copyrigh {date}</p>
+      <div className="footerWrapper">
+        <p>Copyrigh {date}</p>
+      </div>
     </footer>
   );
 };
@@ -113,10 +125,8 @@ class MainContent extends Component<MainContentProp> {}
 
 export class App extends Component {
   state = {
-    styles: {
-      backgroundColor: "",
-      color: "",
-    },
+    backgroundColor: "#61dbfb",
+    color: "white",
   };
 
   showDate = (time: Date): string => {
@@ -144,14 +154,22 @@ export class App extends Component {
   greetPeople = () => {
     alert("Welcome to 30 days of react, 2023");
   };
-  changeBackground = () => {
-    let WhiteBackGround = "white";
-    let BlackBackGround = "Black";
-    let CurrentColor =
-      this.state.styles.backgroundColor === WhiteBackGround
+  changeBackground = () => 
+  {
+    let WhiteBackGround = "#61dbfb";
+    let BlackBackGround = "#0E2954";
+    let CurrentBackColor =
+      this.state.backgroundColor === WhiteBackGround
         ? BlackBackGround
         : WhiteBackGround;
-    this.setState({CurrentColor});
+        
+        let CurrentColor =
+      CurrentBackColor === WhiteBackGround
+      ? "black"
+      : "white"; 
+      this.setState({ backgroundColor: CurrentBackColor });
+      console.log("back coloor:  ", this.state.backgroundColor );
+      this.setState({color: CurrentColor});
   };
   render() {
     const UserData: data = {
@@ -159,33 +177,40 @@ export class App extends Component {
       Title: "Getting Started React",
       Subtitle: "JavaScript Library",
       author: {
-        FirstName: "Zac",
+        FirstName: "Zakaria",
         LastName: "Rabhi",
       },
       date: "Oct 7, 2020",
+      BackGround: this.state.backgroundColor,
+      color: this.state.color,
     };
 
     const userImage = { image: zrabhiImage };
     return (
-      <div className="header-wrapper">
-        {this.state.styles.backgroundColor}
+      <div className="App" >
         <HeaderContent data={UserData} />
-        <UserCard FirstName="Zakaria" LastName="rabhi" Image={zrabhiImage} />
-        <Button
-          text="Greet People"
-          style={buttonStyles}
-          onClick={this.greetPeople}
-        />
-        <Button
-          text="Show Time"
-          style={buttonStyles}
-          onClick={this.handleTime}
-        />
-        <Button
-          text="Change Background"
-          style={buttonStyles}
-          onClick={this.changeBackground}
-        />
+        <div className="Card">
+          <p>Prerequisite to get started react.js</p>
+          <TechList />
+          <UserCard FirstName="Zakaria" LastName="Rabhi" Image={zrabhiImage} />
+        </div>
+        <div className="Buttons">
+          <Button
+            text="Greet People"
+            style={buttonStyles}
+            onClick={this.greetPeople}
+          />
+          <Button
+            text="Show Time"
+            style={buttonStyles}
+            onClick={this.handleTime}
+          />
+          <Button
+            text="Change Background"
+            style={buttonStyles}
+            onClick={this.changeBackground}
+          />
+        </div>
         <Footer date={this.showDate(new Date())} />
       </div>
     );
