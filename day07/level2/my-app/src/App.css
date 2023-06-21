@@ -1,8 +1,9 @@
 
 .MainContent h1 {
+  padding-top: 1rem;
   width: auto;
   font-size: 70px;
-  font-weight: 300;
+  font-weight: 200;
   margin: 0;
 }
 
@@ -51,10 +52,24 @@ small {
   text-align: center;
 }
 
+.Card
+{
+  border: 10px solid rgb(162, 162, 162);
+  box-shadow: 0px 0px 10px 10px rgb(162, 162, 162);
+  padding: 7rem 15rem;
+  margin: 4rem 28rem;
+  border-radius: 15px ; 
+  width: 250px;
+  height: 200px;
+}
+  
 .Card p {
   padding:  1rem 10rem;
   margin: 0;
-  /* height: 100%; */
   font-size: 20px;
   font-weight: 100;
+}
+button
+{
+  margin: 0 25rem;
 }

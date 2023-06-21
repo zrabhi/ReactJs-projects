@@ -24,10 +24,15 @@ type HeaderContentProp  = {
     data: data;
 }
 
+type Button = {
+    onClick: () => void;
+}
+
 export type PropsType = {
     Footer: Footer;
     HeaderContentProp: HeaderContentProp;
     data: data;
+    Button: Button;
 };
   
 

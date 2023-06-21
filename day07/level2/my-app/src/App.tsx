@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import "./App.css";
 import Props from "./PropsTypes";
+import countriesData from "./data/countries";
+import randomNumberInRange from "./utils/Helpers"
 
 const Footer: React.FC<Props["Footer"]> = ({ date, background, color }) => {
   return (
@@ -15,6 +17,13 @@ const Footer: React.FC<Props["Footer"]> = ({ date, background, color }) => {
   );
 };
 
+const Button: React.FC<Props["Button"]> = ({onClick}) => {
+  return (
+    <button  onClick={onClick}>
+      Select Country
+    </button>
+  );
+};
 class HeaderContent extends Component<Props["HeaderContentProp"]> {
   render() {
     const { Welcome, Title, Subtitle } = this.props.data;
@@ -41,14 +50,14 @@ class HeaderContent extends Component<Props["HeaderContentProp"]> {
 }
 
 class App extends Component {
-  constructor(prop: Props) {
-    super(prop);
-  }
-
+  
   state = {
-    backgroundColor: "#61dbfb",
-    userCardBckGround: "",
-    color: "black",
+    name: 'Afghanistan',
+    capital: 'Kabul',
+    languages: ['Pashto', 'Uzbek', 'Turkmen'],
+    population: 27657145,
+    flag: 'https://restcountries.eu/data/afg.svg',
+    currency: 'Afghan afghani',
   };
 
   showDate = (time: Date): string => {
@@ -79,24 +88,12 @@ class App extends Component {
     alert("Welcome to 30 days of react, 2023");
   };
 
-  changeBackground = () => {
-    let WhiteBackGround = "#61dbfb";
-    let BlackBackGround = "#18122B";
-    let CurrentBackColor =
-      this.state.backgroundColor === WhiteBackGround
-        ? BlackBackGround
-        : WhiteBackGround;
-
-    let CurrentColor = CurrentBackColor === WhiteBackGround ? "black" : "white";
-    let UserCardBack =
-      CurrentBackColor === WhiteBackGround ? "white" : "#18122B";
-    this.setState({ backgroundColor: CurrentBackColor });
-    this.setState({ color: CurrentColor });
-    this.setState({ userCardBckGround: UserCardBack });
+  changeCountry = () => {
+   
   };
   render() {
     const UserData: Props["data"] = {
-      Welcome: "Welcome to 30 Days Of React",
+      Welcome: "30 Days Of React",
       Title: "Getting Started React",
       Subtitle: "JavaScript Library",
       author: {
@@ -104,24 +101,22 @@ class App extends Component {
         LastName: "Rabhi",
       },
       date: "Oct 7, 2020",
-      BackGround: this.state.backgroundColor,
-      color: this.state.color,
+      BackGround: "#61dbfb",
+      color: "#18122B",
     };
 
     return (
-      <div className="App" style={{ background: this.state.userCardBckGround }}>
+      <div className="App" >
         <HeaderContent data={UserData} />
         <div
           className="Card"
-          style={{
-            background: this.state.userCardBckGround,
-            color: this.state.color,
-          }}
+          
         ></div>
+      <Button onClick={this.changeCountry}/>
         <Footer
           date={this.showDate(new Date())}
-          background={this.state.backgroundColor}
-          color={this.state.color}
+          background="#61dbfb"
+          color="#18122B"
         />
       </div>
     );
