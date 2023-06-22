@@ -27,13 +27,23 @@ type HeaderContentProp  = {
 type Button = {
     onClick: () => void;
 }
+type Contries = 
+{
+    name: string;
+    capital: string;
+    language: string;
+    population: number;
+    flag: string;
+    currency: string;
+}
 
 export type PropsType = {
+  
     Footer: Footer;
     HeaderContentProp: HeaderContentProp;
     data: data;
     Button: Button;
+    Contries: Contries;
 };
   
-
 export default PropsType;

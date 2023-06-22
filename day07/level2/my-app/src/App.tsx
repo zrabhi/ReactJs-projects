@@ -26,12 +26,13 @@ const Button: React.FC<Props["Button"]> = ({onClick}) => {
 };
 class HeaderContent extends Component<Props["HeaderContentProp"]> {
   render() {
-    const { Welcome, Title, Subtitle } = this.props.data;
+    const { Welcome, Title, Subtitle } = this.props.data;   
     const { FirstName, LastName } = this.props.data.author;
 
     return (
       <div
         style={{
+
           background: this.props.data.BackGround,
           color: this.props.data.color,
         }}
@@ -48,6 +49,25 @@ class HeaderContent extends Component<Props["HeaderContentProp"]> {
     );
   }
 }
+
+// class Countries extends Component<Props["Contries"]>
+// {
+  
+//   render() {
+    
+//     const {name, capital, language, population,flag, currency} = this.props;
+//     return (
+//       <div className="ContrieWrapper">
+//           <img src={flag} alt={name}/>
+//           <h1>{name}</h1>
+//           <h2>Country: <h3>{capital}</h3></h2>
+//           <h2>Language: <h3>{language}</h3></h2>
+//           <h2>Population: <h3>{population}</h3></h2>
+//           <h2>Currency: <h3>{currency}</h3></h2> 
+//       </div>
+//     );
+//   }
+// }
 
 class App extends Component {
   
@@ -89,6 +109,8 @@ class App extends Component {
   };
 
   changeCountry = () => {
+   let RandomValue = randomNumberInRange(0, countriesData.length);
+    console.log(countriesData[RandomValue]);
    
   };
   render() {
@@ -108,11 +130,11 @@ class App extends Component {
     return (
       <div className="App" >
         <HeaderContent data={UserData} />
+      <div className="CardWrapper">
         <div
-          className="Card"
-          
-        ></div>
-      <Button onClick={this.changeCountry}/>
+          className="Card">
+      </div>
+      <Button onClick={this.changeCountry}/></div>
         <Footer
           date={this.showDate(new Date())}
           background="#61dbfb"
@@ -123,4 +145,5 @@ class App extends Component {
   }
 }
 
-export default App;
+export {}
+export default  App;

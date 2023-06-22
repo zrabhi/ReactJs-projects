@@ -1,3 +1,10 @@
+.App{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  /* text-align: start; */
+}
 
 .MainContent h1 {
   padding-top: 1rem;
@@ -52,12 +59,15 @@ small {
   text-align: center;
 }
 
-.Card
+.CardWrapper
 {
+  display: flex;
+  flex-direction: column;
   border: 10px solid rgb(162, 162, 162);
   box-shadow: 0px 0px 10px 10px rgb(162, 162, 162);
-  padding: 7rem 15rem;
-  margin: 4rem 28rem;
+  padding: 10rem 16rem;
+  gap:3.5rem;
+  margin: 10rem auto;
   border-radius: 15px ; 
   width: 250px;
   height: 200px;
@@ -69,7 +79,15 @@ small {
   font-size: 20px;
   font-weight: 100;
 }
+
 button
 {
-  margin: 0 25rem;
+  margin-top:23rem;
+  width: auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border:1px;
+  color: white;
+  border-radius: 8px;
+  background: #61dbfb;
 }
