@@ -91,3 +91,8 @@ button
   border-radius: 8px;
   background: #61dbfb;
 }
+
+img{
+  width:100px;
+  height: 50px;
+}
