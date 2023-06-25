@@ -1,0 +1,24 @@
+.App{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  /* text-align: start; */
+}
+
+.MainContent h1 {
+  padding-top: 1rem;
+  width: auto;
+  font-size: 70px;
+  font-weight: 200;
+  margin: 0;
+}
+
+.MainContent h2,
+h3,
+p,
+small {
+  margin-top: 3px;
+  margin-bottom: 0;
+  font-weight: 100;
+}
