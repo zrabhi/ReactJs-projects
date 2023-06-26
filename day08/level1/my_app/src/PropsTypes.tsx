@@ -1,3 +1,4 @@
+
 type Userdata = {
   Welcome: string;
   Title: string;
@@ -31,6 +32,7 @@ type MainContent = {
   loggedIn: boolean;
   handleLogin: () => void;
   message: string;
+  cardStyle: React.CSSProperties
 };
 
 type HeaderContent = {

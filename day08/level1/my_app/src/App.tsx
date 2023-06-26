@@ -42,22 +42,24 @@ const Welcome = () => (
   </div>
 );
 
-// A button component
-const Button: React.FC<Prop["Button"]> = ({ text, onClick, style }) => (
-  <button onClick={onClick} style={style}>
-    {text}
-  </button>
-);
 // TechList Component
 // class base component
 class TechList extends React.Component<Prop["techs"]> {
   render() {
+    const liStyle: React.CSSProperties = {
+      listStyle: "none",
+      fontWeight: "100",
+      fontSize: "15px",
+    };
     const { techs } = this.props;
-    const techsFormatted = techs.map((tech) => <li key={tech}>{tech}</li>);
+    const techsFormatted = techs.map((tech) => (
+      <li style={liStyle} key={tech}>
+        {tech}
+      </li>
+    ));
     return techsFormatted;
   }
 }
-
 // Main Component
 // Class Component
 class Main extends React.Component<Prop["MainContent"]> {
@@ -70,13 +72,15 @@ class Main extends React.Component<Prop["MainContent"]> {
     return (
       <main>
         <div className="main-wrapper">
-          <p>Prerequisite to get started react.js:</p>
-          <ul>
-            <TechList techs={this.props.techs} />
-          </ul>
-          {techs.length === 3 && (
-            <p>You have all the prerequisite courses to get started React</p>
-          )}
+          <div className="Card" style={this.props.cardStyle}>
+            <p>Prerequisite to get started react.js:</p>
+            <ul>
+              <TechList techs={this.props.techs} />
+            </ul>
+            {techs.length === 3 && (
+              <p>You have all the prerequisite courses to get started React</p>
+            )}
+          </div>
           <div>
             <Button
               text="Show Time"
@@ -113,16 +117,33 @@ class Main extends React.Component<Prop["MainContent"]> {
 
 // CSS styles in JavaScript Object
 const buttonStyles = {
-  backgroundColor: "#61dbfb",
+  backgroundColor: '#61dbfb',
   padding: 10,
-  border: "none",
+  border: 'none',
   borderRadius: 5,
-  margin: "3px auto",
-  cursor: "pointer",
+  margin: '03px auto',
+  cursor: 'pointer',
   fontSize: 22,
-  color: "white",
+  color: 'white',
 };
 
+const buttonDivStyle: React.CSSProperties = {
+  // display: "flex",
+  // flexDirection: "row",
+  // flexWrap: "wrap",
+  // height: "auto",
+  // paddingTop: "0px",
+  paddingLeft: "160px",
+};
+
+// A button component
+const Button: React.FC<Prop["Button"]> = ({ text, onClick, style }) => (
+  <div className="Buttons" style={buttonDivStyle}>
+    <button onClick={onClick} style={style}>
+      {text}
+    </button>
+  </div>
+);
 // Footer Component
 // Class component
 class Footer extends React.Component<Prop["Footer"]> {
@@ -199,7 +220,15 @@ class App extends React.Component {
         borderBottom: "1px solid rgb(194, 194, 194)",
       },
     };
-    const footerStyle:  React.CSSProperties = {
+    const cardStyle: React.CSSProperties = {
+      color: "black",
+      display: "flex",
+      flexDirection: "column",
+      height: "auto",
+      paddingTop: "10px",
+      paddingLeft: "160px",
+    };
+    const footerStyle: React.CSSProperties = {
       position: "fixed",
       borderTop: "2px solid rgb(194, 194, 194)",
       background: "#61dbfb",
@@ -217,6 +246,7 @@ class App extends React.Component {
 
         <Main
           techs={this.state.techs}
+          cardStyle={cardStyle}
           handleTime={this.handleTime}
           greetPeople={this.greetPeople}
           loggedIn={this.state.loggedIn}
