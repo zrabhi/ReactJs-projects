@@ -47,7 +47,7 @@ function NavBar(props: Props["mode"])
           <Button mode={mode}
                   BackGroundColor={BackGroundColor}
                   OnClick={OnClick}
-                  Color={Color}
+                Color={Color}
             />
         </ul>
       </div>
